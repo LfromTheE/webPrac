@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="./img/stars.png" id="stars" alt="">
+        <img src="./img/moon.png" alt="" id="moon">
+        <img src="./img/mountains_behind.png" alt="" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="./img/mountains_front.png" alt="" id="mountain_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effecs</h2>
+        <p>We sometimes encounter people who are fond of correcting anyone who uses decimate in any but the original ‘Roman military punishment’ sense, yet these adherents to historical accuracy seem to not take issue with any number of everyday words. Take, for example, triumph.<br><br>What it meant: an ancient Roman ceremonial in honor of a general after his decisive victory over a foreign enemy beginning with his entrance into the city preceded by the senate and magistrates, the spoils, and the captives in chains and followed by his army in marching order and ending with sacrificial offerings and a public feast<br><br>In ancient Rome different types of victories called for different types of celebrations; a triumph was awarded to generals who had achieved notable victories. You may, of course, still describe your own small personal victories as a triumph, even if they are not followed by sacrificial offerings and public feasting.</p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let mountain_front = document.getElementById('mountain_front');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value*0.25 + 'px';
+            moon.style.top = value*1.05 + 'px';
+            mountains_behind.style.top = value*0.5 + 'px';
+            mountain_front.style.top = value*0 + 'px';
+            text.style.marginRight = value*4 +'px';
+            btn.style.marginTop = value*1.5 +'px';
+            header.style.top = value*0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
